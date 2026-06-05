@@ -301,6 +301,7 @@ h1 {
   padding: 0 13px;
   background: rgba(255, 255, 255, 0.1);
   color: white;
+  white-space: nowrap;
 }
 
 .composer-tools .submit-chip {
@@ -451,6 +452,15 @@ h1 {
 .post-card p {
   margin-bottom: 12px;
   color: var(--muted);
+}
+
+.post-card .artifact-line {
+  margin-bottom: 12px;
+  color: #334155;
+}
+
+.artifact-line strong {
+  color: var(--ink);
 }
 
 .meta {
@@ -607,6 +617,23 @@ h1 {
   background: var(--soft);
 }
 
+.outcome-box {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 18px;
+  padding: 14px;
+  border-radius: 8px;
+  background: white;
+}
+
+.outcome-box strong {
+  color: var(--ink);
+}
+
+.outcome-box span {
+  color: #475569;
+}
+
 .modal-body h3 {
   margin-bottom: 10px;
   font-size: 1rem;
@@ -739,6 +766,10 @@ h1 {
 }
 
 @media (max-width: 410px) {
+  .composer-tools button {
+    flex: 1 1 100%;
+  }
+
   .composer-tools .submit-chip {
     width: 100%;
     margin-left: 0;
