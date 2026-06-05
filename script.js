@@ -412,10 +412,11 @@ function setFilter(filter) {
 }
 
 function updateActiveNav() {
-  const current = [...document.querySelectorAll("main section[id]")].find((section) => {
-    const rect = section.getBoundingClientRect();
-    return rect.top <= 120 && rect.bottom > 120;
-  });
+  const current = [...document.querySelectorAll(".nav-item")]
+    .map((link) => document.querySelector(link.hash))
+    .filter(Boolean)
+    .reverse()
+    .find((section) => section.getBoundingClientRect().top <= 140);
 
   document.querySelectorAll(".nav-item").forEach((link) => {
     link.classList.toggle("active", current && link.hash === `#${current.id}`);
