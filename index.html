@@ -3,164 +3,143 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Postline</title>
+    <title>Creator Course: Become a YouTuber</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="app-shell">
       <aside class="sidebar" aria-label="Primary navigation">
-        <a class="brand" href="#" aria-label="Postline home">
-          <span class="brand-mark">P</span>
-          <span>Postline</span>
+        <a class="brand" href="#course" aria-label="Creator Course home">
+          <span class="brand-mark">YT</span>
+          <span>Creator Course</span>
         </a>
 
         <nav class="nav-list">
-          <a class="nav-item active" href="#">
+          <a class="nav-item active" href="#course">
             <span class="icon" aria-hidden="true">⌂</span>
-            Discover
+            Course
           </a>
-          <a class="nav-item" href="#">
+          <a class="nav-item" href="#lessons">
+            <span class="icon" aria-hidden="true">▣</span>
+            Lessons
+          </a>
+          <a class="nav-item" href="#toolkit">
             <span class="icon" aria-hidden="true">✎</span>
-            Drafts
+            Toolkit
           </a>
-          <a class="nav-item" href="#">
-            <span class="icon" aria-hidden="true">◈</span>
-            Channels
-          </a>
-          <a class="nav-item" href="#">
+          <a class="nav-item" href="#examples">
             <span class="icon" aria-hidden="true">◎</span>
-            Analytics
+            Examples
           </a>
         </nav>
 
         <div class="profile-card">
           <div>
-            <p class="eyebrow">Creator score</p>
-            <strong>84.6</strong>
+            <p class="eyebrow">Course progress</p>
+            <strong><span id="progress-count">0</span>/5</strong>
           </div>
-          <span class="status-pill">Rising</span>
+          <span class="status-pill" id="progress-label">Start here</span>
         </div>
       </aside>
 
       <main>
         <header class="topbar">
-          <div class="search-wrap">
+          <label class="search-wrap">
             <span aria-hidden="true">⌕</span>
-            <input type="search" placeholder="Search posts, authors, topics" aria-label="Search posts, authors, topics" />
-          </div>
+            <input id="course-search" type="search" placeholder="Search lessons, templates, video ideas" aria-label="Search lessons, templates, video ideas" />
+          </label>
           <div class="topbar-actions">
-            <button class="icon-button" type="button" aria-label="Notifications">●</button>
-            <button class="primary-button" type="button">Publish</button>
+            <button class="icon-button" type="button" id="clear-progress" aria-label="Reset course progress">↺</button>
+            <button class="primary-button" type="button" id="publish-plan">Publish</button>
           </div>
         </header>
 
-        <section class="hero-grid" aria-label="Publishing dashboard">
+        <section class="hero-grid" id="course" aria-label="YouTuber course overview">
           <article class="composer">
             <div class="composer-head">
               <div>
-                <p class="eyebrow">Create</p>
-                <h1>Share the next story people find first.</h1>
+                <p class="eyebrow">5 lesson course</p>
+                <h1>Become a YouTuber with a channel plan you can actually use.</h1>
               </div>
-              <button class="icon-button dark" type="button" aria-label="Add media">＋</button>
+              <button class="icon-button dark" type="button" id="show-outline" aria-label="View course outline">☰</button>
             </div>
-            <textarea aria-label="Post draft" placeholder="Headline, idea, or opening line"></textarea>
-            <div class="composer-tools">
-              <button type="button">Blog</button>
-              <button type="button">News</button>
-              <button type="button">Story</button>
-              <button class="submit-chip" type="button">Post now</button>
+            <textarea id="idea-box" aria-label="Video idea draft" placeholder="Write a video idea, title, or niche you want to build around"></textarea>
+            <div class="composer-tools" aria-label="Idea helper buttons">
+              <button type="button" data-template="niche">Niche</button>
+              <button type="button" data-template="hook">Hook</button>
+              <button type="button" data-template="script">Script</button>
+              <button class="submit-chip" type="button" id="save-idea">Save idea</button>
             </div>
+            <p class="draft-note" id="draft-note" aria-live="polite">Your notes stay in this browser only.</p>
           </article>
 
-          <article class="featured-story">
-            <canvas class="story-art" width="860" height="520" data-art="lead" aria-label="Abstract editorial cover artwork"></canvas>
+          <article class="featured-story" role="button" tabindex="0" data-open-lesson="1" aria-label="Open featured lesson">
+            <canvas class="story-art" width="860" height="520" data-art="lead" aria-label="YouTube course cover artwork"></canvas>
             <div class="story-overlay">
-              <span class="tag">Featured</span>
-              <h2>The independent creator's guide to becoming searchable</h2>
-              <p>By Mara Wells · 12 min read</p>
+              <span class="tag">Start with lesson 1</span>
+              <h2>Find your niche and promise before you record</h2>
+              <p>Define who the channel is for, what viewers get, and why they come back.</p>
             </div>
           </article>
         </section>
 
-        <section class="content-grid">
+        <section class="content-grid" id="lessons">
           <div class="main-feed">
             <div class="section-head">
               <div>
-                <p class="eyebrow">Live network</p>
-                <h2>Seen across Postline</h2>
+                <p class="eyebrow">Course library</p>
+                <h2>Five lessons to launch a YouTube channel</h2>
               </div>
-              <div class="segmented" aria-label="Feed filter">
-                <button class="selected" type="button">For you</button>
-                <button type="button">Fresh</button>
-                <button type="button">Discussed</button>
+              <div class="segmented" aria-label="Lesson filter">
+                <button class="selected" type="button" data-filter="all">All</button>
+                <button type="button" data-filter="planning">Planning</button>
+                <button type="button" data-filter="production">Production</button>
+                <button type="button" data-filter="growth">Growth</button>
               </div>
             </div>
 
-            <div class="post-list">
-              <article class="post-card">
-                <canvas class="thumb" width="280" height="180" data-art="city" aria-label="City editorial artwork"></canvas>
-                <div>
-                  <span class="tag subtle">Urban life</span>
-                  <h3>What late-night city diners teach us about community</h3>
-                  <p>Signals, rituals, and places that make strangers feel briefly known.</p>
-                  <div class="meta">
-                    <span>3.8k views</span>
-                    <span>126 saves</span>
-                  </div>
-                </div>
-              </article>
-
-              <article class="post-card">
-                <canvas class="thumb" width="280" height="180" data-art="desk" aria-label="Desk editorial artwork"></canvas>
-                <div>
-                  <span class="tag subtle">Writing</span>
-                  <h3>The draft folder is not a graveyard</h3>
-                  <p>A practical rhythm for turning unfinished notes into published work.</p>
-                  <div class="meta">
-                    <span>2.2k views</span>
-                    <span>84 replies</span>
-                  </div>
-                </div>
-              </article>
-
-              <article class="post-card">
-                <canvas class="thumb" width="280" height="180" data-art="news" aria-label="News editorial artwork"></canvas>
-                <div>
-                  <span class="tag subtle">Newsroom</span>
-                  <h3>Small teams are rebuilding local reporting</h3>
-                  <p>The new publishing stack behind neighborhood-first journalism.</p>
-                  <div class="meta">
-                    <span>5.1k views</span>
-                    <span>31 citations</span>
-                  </div>
-                </div>
-              </article>
-            </div>
+            <div class="post-list" id="lesson-list"></div>
+            <p class="empty-state" id="empty-state" hidden>No matching lessons or resources. Try a different search.</p>
           </div>
 
           <aside class="right-rail">
-            <section class="panel">
+            <section class="panel" id="toolkit">
               <div class="section-head compact">
-                <h2>Trending channels</h2>
+                <h2>Course toolkit</h2>
               </div>
               <div class="channel-list">
-                <a href="#"><span>01</span> Personal essays <strong>+28%</strong></a>
-                <a href="#"><span>02</span> Tech culture <strong>+19%</strong></a>
-                <a href="#"><span>03</span> Local news <strong>+17%</strong></a>
-                <a href="#"><span>04</span> Fiction shorts <strong>+14%</strong></a>
+                <a href="#lessons" data-track="planning"><span>01</span> Channel planning <strong>2 lessons</strong></a>
+                <a href="#lessons" data-track="production"><span>02</span> Filming setup <strong>1 lesson</strong></a>
+                <a href="#lessons" data-track="production"><span>03</span> Editing workflow <strong>1 lesson</strong></a>
+                <a href="#lessons" data-track="growth"><span>04</span> Growth basics <strong>1 lesson</strong></a>
               </div>
             </section>
 
-            <section class="panel spotlight-panel">
-              <canvas class="mini-art" width="520" height="320" data-art="portrait" aria-label="Creator spotlight artwork"></canvas>
-              <p class="eyebrow">Creator spotlight</p>
-              <h2>Nia Okafor</h2>
-              <p>Publishing weekly field notes on design, work, and internet culture.</p>
-              <button class="secondary-button" type="button">Follow</button>
+            <section class="panel spotlight-panel" id="examples">
+              <canvas class="mini-art" width="520" height="320" data-art="portrait" aria-label="Creator checklist artwork"></canvas>
+              <p class="eyebrow">Practice project</p>
+              <h2>Publish-ready starter pack</h2>
+              <p>Use the lessons to create a niche statement, three video titles, one outline, a thumbnail brief, and an upload checklist.</p>
+              <button class="secondary-button" type="button" id="open-starter-pack">Open starter pack</button>
             </section>
           </aside>
         </section>
       </main>
+    </div>
+
+    <div class="modal" id="detail-modal" hidden>
+      <div class="modal-backdrop" data-close-modal></div>
+      <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="icon-button close-button" type="button" data-close-modal aria-label="Close detail">×</button>
+        <p class="eyebrow" id="modal-eyebrow">Lesson</p>
+        <h2 id="modal-title"></h2>
+        <p id="modal-summary"></p>
+        <div class="modal-body" id="modal-body"></div>
+        <div class="modal-actions">
+          <button class="secondary-button" type="button" id="copy-detail">Copy checklist</button>
+          <button class="primary-button" type="button" id="mark-complete">Mark complete</button>
+        </div>
+      </article>
     </div>
 
     <script src="script.js"></script>
